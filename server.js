@@ -64,7 +64,7 @@ app.use(session({
 const dbConfig = {
     user: 'restarea',
     password: '1577',
-    connectString: 'localhost:1521/xe'
+    connectString: '192.168.0.27:1521/xe'
     // user: 'restarea',
     // password: '1577',
     // connectString: '192.168.0.27:1521/xe'
@@ -74,7 +74,7 @@ const dbConfig = {
 
 
 app.set('view engine', 'ejs');
-oracledb.initOracleClient({ libDir: 'C:\\instantclient_21_13' });
+oracledb.initOracleClient({ libDir: 'C:\\JEWi\\Util\\instantclient_21_13' });
 
 
 oracledb.autoCommit = true;
