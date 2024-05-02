@@ -3,7 +3,7 @@ const oracledb = require('oracledb');
 const cors = require('cors');
 
 oracledb.autoCommit = true;
-oracledb.initOracleClient({ libDir: 'C:\\instantclient_21_13' });
+oracledb.initOracleClient({ libDir: 'C:\\JEWi\\Util\\instantclient_21_13' });
 
 const app = express();
 app.use(cors());
