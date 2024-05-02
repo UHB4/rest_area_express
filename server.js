@@ -74,7 +74,7 @@ const dbConfig = {
 
 
 app.set('view engine', 'ejs');
-oracledb.initOracleClient({ libDir: 'D:\\instantclient_21_13' });
+oracledb.initOracleClient({ libDir: 'C:\\instantclient_21_13' });
 
 
 oracledb.autoCommit = true;
