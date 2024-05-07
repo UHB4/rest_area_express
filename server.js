@@ -46,18 +46,18 @@ const port = 3001;
 //     return iconv.decode(iconv.encode(fileName, 'CP949'), 'UTF-8');
 // }
 
-app.set('view engine', 'ejs');
-// const WEB_SERVER_HOME = 'D:\\HKLee\\Util\\nginx-1.24.0\\html';
-const WEB_SERVER_HOME = 'C:\\JWLee\\util\\nginx window\\nginx-1.24.0\\html';
-// 업로드 폴더 정의
-const UPLOADS_FOLDER = path.join(WEB_SERVER_HOME, 'uploads');
-app.use('/', express.static(WEB_SERVER_HOME+ '/'));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(session({
-    secret: 'secret-key',
-    resave: false,
-    saveUninitialized: true
-}));
+// app.set('view engine', 'ejs');
+// // const WEB_SERVER_HOME = 'D:\\HKLee\\Util\\nginx-1.24.0\\html';
+// const WEB_SERVER_HOME = 'C:\\JWLee\\util\\nginx window\\nginx-1.24.0\\html';
+// // 업로드 폴더 정의
+// const UPLOADS_FOLDER = path.join(WEB_SERVER_HOME, 'uploads');
+// app.use('/', express.static(WEB_SERVER_HOME+ '/'));
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(session({
+//     secret: 'secret-key',
+//     resave: false,
+//     saveUninitialized: true
+// }));
 
 
 // Oracle 데이터베이스 연결 설정
@@ -913,8 +913,21 @@ app.post('/find-stations', async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.sendFile('C:\\UHB\\rest_area\\build\\index.html');
+});
+
+app.use(express.static('C:\\UHB\\rest_area\\build'))
+
+
+
 
 // 게시판 서버 시작
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}/boardMain`);
+    console.log(`Server is running on http://localhost:${port}`);
+});
+
+
+app.get('*', (req, res) => {
+    res.sendFile('C:\\UHB\\rest_area\\build\\index.html');
 });
